@@ -42,7 +42,7 @@ class BlogController extends BaseController {
 	 */
 	public function getPost($slug)
 	{
-            $post = \App\Blog::where(['slug' => $slug]);
+            $post = \App\Blog::where(['slug' => $slug])->firstOrFail();
             if($post == NULL){
                 App::abort(404);
             }
