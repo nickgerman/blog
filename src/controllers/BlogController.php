@@ -46,7 +46,7 @@ class BlogController extends BaseController {
             if($post == NULL){
                 App::abort(404);
             }
-            return View('blog::post',array('title'=>$post['title'],'post'=>$post));
+            return View('blog::post',array('title'=>$post->title,'post'=>$post));
 	}
         
     /**
@@ -70,7 +70,7 @@ class BlogController extends BaseController {
         switch ($social){
             case 'twitter' :
                 $url  = 'https://twitter.com/home?status=';
-                $url .= $post['title'] . ' ' . $post->getUrl();
+                $url .= $post->title . ' ' . $post->getUrl();
             break;
             case 'facebook' :
                 $url  = 'https://www.facebook.com/sharer/sharer.php?u=';
