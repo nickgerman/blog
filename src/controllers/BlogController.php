@@ -35,14 +35,14 @@ class BlogController extends BaseController {
     }
 	/**
 	 * Display the specified resource.
-	 * GET /blog/{id}/title
+	 * GET /blog/{slug}
 	 *
-	 * @param  int  $id
+	 * @param string  $slug
 	 * @return Response
 	 */
-	public function getPost($id)
+	public function getPost($slug)
 	{
-            $post = \App\Blog::find($id);
+            $post = \App\Blog::where(['slug' => $slug]);
             if($post == NULL){
                 App::abort(404);
             }

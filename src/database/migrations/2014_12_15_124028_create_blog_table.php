@@ -19,6 +19,7 @@ class CreateBlogTable extends Migration {
                     $table->string('image',256);
                     $table->string('author',256);
                     $table->longText('content');
+	                $table->string('slug', 256);
                     $table->bigInteger('socialPoint');
                     $table->boolean('public');
                     $table->timestamps();
