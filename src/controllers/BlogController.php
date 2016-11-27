@@ -35,7 +35,7 @@ class BlogController extends BaseController {
     }
 	/**
 	 * Display the specified resource.
-	 * GET /blog/{slug}
+	 * GET /blog/post/{slug}
 	 *
 	 * @param string  $slug
 	 * @return Response
